@@ -63,9 +63,9 @@ describe('testing storage methods', () => {
     expect(store.currentFilter).toBe('all');
 
     // установить половину todo в active, другую в completed
-    const length = store.todoList.length;
+    const halfLength = Math.ceil(store.todoList.length / 2);
     store.todoList.forEach((i, ind) => {
-      if (ind < length - 1) {
+      if (ind < halfLength) {
         i.isDone = false;
         return;
       }
@@ -101,9 +101,9 @@ describe('testing storage methods', () => {
     expect(store.currentFilter).toBe('all');
 
     // установить половину todo в active, другую в completed
-    const length = store.todoList.length;
+    const halfLength = Math.ceil(store.todoList.length / 2);
     store.todoList.forEach((i, ind) => {
-      if (ind < length - 1) {
+      if (ind < halfLength) {
         i.isDone = false;
         return;
       }
