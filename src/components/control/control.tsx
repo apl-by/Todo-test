@@ -17,6 +17,7 @@ const Control = observer(() => {
     <Box
       sx={{
         display: 'flex',
+        flexWrap: 'wrap',
         alignItems: 'center',
         px: 2,
         py: 1,
