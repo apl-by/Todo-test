@@ -3,12 +3,13 @@ import { TTodo, TTodoList, TFilters } from '../types';
 import { generateId } from '../utils/utils';
 import { todosTemplate } from '../utils/data';
 
-class Store {
-  todoList: TTodoList = todosTemplate;
+export class Store {
+  todoList: TTodoList;
   currentFilter: TFilters = 'all';
 
-  constructor() {
+  constructor(initTodoList?: TTodoList) {
     makeAutoObservable(this);
+    this.todoList = initTodoList ?? [];
   }
 
   get itemsList() {
@@ -87,5 +88,5 @@ class Store {
   };
 }
 
-const store = new Store();
+const store = new Store(todosTemplate);
 export default store;
